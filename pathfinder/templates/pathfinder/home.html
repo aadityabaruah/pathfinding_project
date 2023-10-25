@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinding Visualizer</title>
+    <!-- Include the CSRF token for AJAX -->
+    {% csrf_token %}
+    <!-- Link to the styles.css file -->
+    <link rel="stylesheet" href="{% static 'pathfinder/styles.css' %}">
+</head>
+<body>
+<div class="wrapper">
+    <div class="controls">
+        <h1>Pathfinding Visualizer</h1>
+        <!-- Dropdown to select algorithm -->
+        <label for="algorithm-select">Choose an algorithm:</label>
+        <select id="algorithm-select">
+            <option value="dijkstra">Dijkstra's Algorithm</option>
+            <option value="a_star">A-Star</option>
+            <!-- ... add other algorithms here ... -->
+        </select>
+        <!-- Buttons -->
+        <button id="start-btn">Start Visualization</button>
+        <button id="pickup-btn">Toggle Pickup Point Placement</button>
+        <button id="reset-btn">Reset Grid</button>
+    </div>
+    <!-- Grid for pathfinding -->
+    <div id="grid-container">
+        <!-- Cells will be dynamically generated using JavaScript -->
+    </div>
+</div>
+<!-- Include the scripts.js file -->
+<script src="{% static 'pathfinder/scripts.js' %}"></script>
+</body>
+</html>
